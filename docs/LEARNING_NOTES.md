@@ -18,6 +18,16 @@ After each session, add an entry:
 **What finally made it click:**
 ```
 
+# Learning Notes
+
+## 2026-07-07
+
+Today I learned why Express projects are often split into app.js and server.js.
+
+The app.js file contains the application setup such as middleware, routes, and configuration. The server.js file is responsible for starting the server and listening on a port.
+
+Keeping them separate makes the code easier to maintain, test, and scale because the application logic and server startup logic are not mixed together.
+
 ## Entries
 
 _No sessions completed yet. First entry will follow Phase 0 / Phase 1 work (see `DEVELOPMENT_ROADMAP.md`)._
