@@ -4,8 +4,9 @@
 
 ## Next Up
 
-- [Done] `M0.1` — Repository & Tooling Bootstrap (see `DEVELOPMENT_ROADMAP.md`)
-- [ ] `M0.2` — MongoDB Atlas & Environment Config
+- [x] `M0.1` — Repository & Tooling Bootstrap (see `DEVELOPMENT_ROADMAP.md`)
+- [x] `M0.2` — MongoDB Atlas & Environment Config
+-
 
 ## Blocked / Waiting
 

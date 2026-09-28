@@ -36,7 +36,7 @@ Errors:
 
 ### `POST /api/auth/logout`
 - **Purpose:** Invalidate refresh token / clear cookie.
-- **Auth required:** Yes.
+- **Auth required:** No.
 - **Response:** `204`
 
 ---
@@ -191,3 +191,15 @@ Errors:
 - `DATABASE_DESIGN.md` — underlying collections
 - `SECURITY.md` — auth header/token handling, rate limiting rationale
 - `USER_FLOW.md` — how these endpoints compose into full user journeys
+
+
+### `GET /api/auth/me`
+- **Purpose:** Return the current authenticated user's profile. Originally
+  built as a test-only endpoint to verify JWT middleware end-to-end (M1.2),
+  but discovered during M1.3 to be structurally required: since
+  `POST /api/auth/refresh` returns only a new access token (no user data),
+  the frontend's silent-refresh-on-load flow needs this endpoint to
+  repopulate `user` state after a page reload.
+- **Auth required:** Yes.
+- **Response:** `200` `{ id, email, name }`
+- **Error cases:** `401` missing/invalid/expired access token.
