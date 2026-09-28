@@ -1,6 +1,6 @@
 # Dev Portfolio Analytics
 
-> A unified analytics dashboard that connects GitHub, LeetCode, Codeforces, and CodeChef to answer one question a resume can't: *what does your real, verifiable coding activity actually look like — and where are the gaps?*
+> A unified analytics dashboard that connects GitHub and LeetCode to answer one question a resume can't: *what does your real, verifiable coding activity actually look like — and where are the gaps?*
 
 ## Overview
 
