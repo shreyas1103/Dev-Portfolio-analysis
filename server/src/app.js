@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const env = require("./config/env");
 const syncRoutes = require("./routes/sync.routes");
 const authRoutes = require("./routes/auth.routes");
 const accountsRoutes = require("./routes/accounts.routes");
@@ -11,9 +12,21 @@ const weakAreasRoutes = require("./routes/weakAreas.routes");
 const resumeRoutes = require("./routes/resume.routes");
 const app = express();
 
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  env.clientUrl,
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );

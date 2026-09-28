@@ -8,7 +8,7 @@ let refreshPromise = null;
 // Replace hardcoded URL with:
 // import.meta.env.VITE_API_BASE_URL
 const apiClient = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true,
 });
 

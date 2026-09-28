@@ -12,7 +12,7 @@ function setRefreshTokenCookie(res, refreshToken) {
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     secure: env.nodeEnv === "production",
-    sameSite: "lax",
+sameSite: env.nodeEnv === "production" ? "none" : "lax",
     maxAge:
       REFRESH_TOKEN_EXPIRY_DAYS *
       24 *
@@ -25,7 +25,7 @@ function clearRefreshTokenCookie(res) {
   res.clearCookie("refreshToken", {
     httpOnly: true,
     secure: env.nodeEnv === "production",
-    sameSite: "lax",
+sameSite: env.nodeEnv === "production" ? "none" : "lax",
   });
 }
 

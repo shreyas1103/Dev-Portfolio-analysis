@@ -44,7 +44,8 @@ async function githubCallback(req, res, next) {
 
     await githubService.connectAccount(decoded.userId, code);
 
-    res.redirect("http://localhost:5173/dashboard");
+    // res.redirect("http://localhost:5173/dashboard");
+    res.redirect(`${env.clientUrl}/dashboard`);
   } catch (err) {
     next(err);
   }
